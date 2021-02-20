@@ -9,9 +9,8 @@ class Regis extends Component {
         this.state = { 
             username:"",
             password:"",
-            phone:"",
-            email:"",
-            role:"",
+            name:"",
+            nik:"",
          }
     }
 
@@ -35,30 +34,30 @@ class Regis extends Component {
         this.setState({ 
             username:"",
             password:"",
-            phone:"",
-            email:"",
-            role:"",})
+            name:"",
+            nik:"",
+        })
     }
 
     render() {
         console.log("REGIS", this.props.dataUser); 
         return ( 
             <div className="container">
-                <h1>C R E A T E    A C C O U N T</h1>
-                <div>
+                <div className="card-content">
+                    <div className="card-title">
+                        <h2>C R E A T E   A C C O U N T</h2>
+                    <div className="underline-title"></div>
+                </div>
+            </div>
+            <div>
+                    <Label>Name </Label> <Input type="text" name="phone" value={this.state.phone} onChange={this.setValue} placeholder="your name.." />
+                    <Label>NIK </Label> <Input type="text" name="email" value={this.state.email} onChange={this.setValue} placeholder="your NIK.." />                    
                     <Label>Username </Label> <Input type="text" name="username" value={this.state.username} onChange={this.setValue} placeholder="your username.." />
                     <Label>Password </Label> <Input type="text" name="password" value={this.state.password} onChange={this.setValue} placeholder="your password.." />
-                    <Label>Phone Number </Label> <Input type="text" name="phone" value={this.state.phone} onChange={this.setValue} placeholder="your phone number.." />
-                    <Label>Email </Label> <Input type="text" name="email" value={this.state.email} onChange={this.setValue} placeholder="your email.." />
-                    <Label>Role </Label>
-                    <select value={this.state.role} name="role" onChange={this.setValue}>
-                        <option value="admin">Admin</option>
-                        <option value="staff">Staff</option>
-                    </select><br/>
                     <Link to="/">
                         <button type="submit" value="submit" onClick={this.setRegister} >Sign Up</button>
                     </Link>
-                </div>
+            </div>
 
             </div>
          );

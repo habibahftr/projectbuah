@@ -6,7 +6,11 @@ import Nav from "./template/navigation";
 import Body from "./template/body";
 import Bodydef from "./template/bodyDef";
 import { connect } from "react-redux"
-import Home from './page/home';
+import Gejala from "./page/gejala";
+import FormGejala from "./page/formg";
+import AppLogin from "./applogin";
+import AppContent from "./appcontent";
+
 
 class App extends Component {
   constructor(props) {
@@ -22,22 +26,14 @@ class App extends Component {
     })
   }
   showPage=()=>{
-    if(this.props.checkLogin){
+    if(!this.props.checkLogin){
       console.log("login", this.props.checkLogin);
       return(
-        <Router>
-          <Header></Header>
-          <Nav page={this.state.currentPage} changePage={this.goToPage}></Nav>
-          <Bodydef page={this.state.currentPage}></Bodydef>
-          {/* <Home></Home> */}
-          <Footer></Footer>
-        </Router>
-      )
+        <AppContent></AppContent>
+             )
     }else{
       return (
-        <Router>
-          <Body></Body>
-        </Router>
+        <AppLogin></AppLogin>
         
       )
     }
@@ -46,7 +42,6 @@ class App extends Component {
     return ( 
       <>
       {this.showPage()}
-      
       </>
      );
   }

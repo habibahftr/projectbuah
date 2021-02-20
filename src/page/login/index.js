@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Label, Input } from "../../component/form";
 import { connect } from "react-redux";
+import "./style.css";
 
 class Login extends Component {
     constructor(props) {
@@ -20,19 +21,16 @@ class Login extends Component {
 
     doLogin=(dataLogin)=>{
         const {username, password}= dataLogin
-        const {dataUser}= this.props //data dari register
+        const {dataUser}= this.props 
         let find = dataUser.filter(user => {
             return user.username === username && user.password === password 
         })
-        let find1 = dataUser.filter(user => {
-            return user.username === username
-        })
-        console.log("find1", find1);
         if(find.length>0){
-            this.props.submitLogin(find1[0])
+            this.props.submitLogin(find[0])
             alert(`login succesfully`);
         }else{
-            alert(`username & password is undifined`)
+            // alert(`username & password is undifined`)
+            this.props.history.push("/error")
         }
 
 
@@ -42,17 +40,25 @@ class Login extends Component {
         // console.log("LOGIN", this.props.dataUser);
         const {username, password} = this.state
         return ( 
-            <>
+            <div className="container">
+            <div className="card-content">
+                <div className="card-title">
+                    <h2>L O G I N</h2>
+                    <div className="underline-title"></div>
+                </div>
+            </div>
+            <div className="form">
                 <Label>Username </Label>
                 <Input type="text" name="username" onChange={this.setValue} placeholder="username.."></Input>
                 <Label>Password </Label>
                 <Input type="password" name="password" onChange={this.setValue}></Input>
                 <button onClick={()=>this.doLogin({username, password})}>Login</button>
                 <Link to="/regis">
-                    <button>Regis</button>
+                    <div className="buatAkun" href="#">Don't have account?</div>
                 </Link>
+            </div>
 
-            </>
+            </div>
          );
     }
 }

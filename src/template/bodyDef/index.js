@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import Profil from "../../page/profil";
-import Home from "../../page/home";
+import FormGejala from "../../page/formg";
+import Gejala from "../../page/gejala";
+import "./style.css";
 
 
 class Bodydef extends Component {
@@ -10,21 +11,24 @@ class Bodydef extends Component {
         this.state = {  }
     }
     render() { 
-        return ( 
+        return (
+            <div className="bodydef"> 
             <Switch>
-                <Route exact path="/home" component={
+                <Route  path="/formgejala" component={
                     ()=> {
                         let history = useHistory()
-                        return <Home history={history} />
+                        return <FormGejala history={history} />
                     }
-                }/>
-                <Route path="/profil" component={
+                }></Route>
+                <Route exact path="/gejala" component={
                     ()=> {
                         let history = useHistory()
-                        return <Profil history={history} />
+                        return <Gejala history={history} />
                     }
-                }/>
+                }></Route>
+
             </Switch>
+            </div>
          );
     }
 }

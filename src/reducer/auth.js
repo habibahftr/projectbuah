@@ -2,9 +2,8 @@ let defaultState={
     isLogin: false,
     userLogin : {
         username:"",
-        phone:"",
-        email:"",
-        role:"",
+        name:"",
+        nik:"",
     }
 }
 
@@ -17,9 +16,8 @@ const authReducer = (state=defaultState, action)=>{
                 isLogin: true,
                 userLogin : {
                     username:action.payload.username,
-                    phone:action.payload.phone,
-                    email:action.payload.email,
-                    role:action.payload.role,
+                    name:action.payload.name,
+                    nik:action.payload.nik,
                 }
                 
             }

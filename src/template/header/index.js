@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./style.css"
 
 class Header extends Component {
     constructor(props) {
@@ -7,7 +8,9 @@ class Header extends Component {
     }
     render() { 
         return ( 
+            <div className="fixed-header">
             <h1>ini header</h1>
+            </div>
          );
     }
 }

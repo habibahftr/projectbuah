@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -8,9 +9,7 @@ class Home extends Component {
     render() { 
         return ( 
             <>
-            <button onClick={()=>this.props.history.push("/profil")}>Profile</button>
-            <button>Fruit Stock</button>
-            <button>Report</button>
+            <div>ini home</div>
             </>
          );
     }

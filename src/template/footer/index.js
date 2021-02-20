@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./style.css"
 
 class Footer extends Component {
     constructor(props) {
@@ -7,7 +8,9 @@ class Footer extends Component {
     }
     render() { 
         return ( 
+            <div className="fixed-footer">
             <h3>ini footer</h3>
+            </div>
          );
     }
 }

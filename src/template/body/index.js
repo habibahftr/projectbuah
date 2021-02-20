@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Router, Switch, useHistory } from 'react-router-dom';
 import Login from "../../page/login";
 import Regis from "../../page/regis";
+import Error from "../../page/error";
 
 class Body extends Component {
     constructor(props) {
@@ -22,6 +23,12 @@ class Body extends Component {
                     ()=> {
                         let history = useHistory()
                         return <Regis history={history} />
+                    }
+                } />
+                <Route path="/error" component={
+                    ()=> {
+                        let history = useHistory()
+                        return <Error history={history} />
                     }
                 } />
 

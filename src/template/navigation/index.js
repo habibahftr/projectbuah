@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Menu from "../../component/menu";
+import "./style.css";
 
 class Nav extends Component {
     constructor(props) {
@@ -13,20 +14,23 @@ class Nav extends Component {
     render() { 
         const{changePage}= this.props
         return ( 
-            <>
-                {/* <Link to="/">
-                    <Menu redirect={()=> changePage("login")}>Login</Menu>
-                </Link>
-                <Link to="/regis">
-                    <Menu redirect={()=> changePage("regis")}>Regis</Menu>
-                </Link> */}
+            <div className="sidenav">
                 <Link to="/home">
                     <Menu redirect={()=> changePage("home")}>Home</Menu>
                 </Link>
-                <Link to="/profil">
-                    <Menu redirect={()=> changePage("profil")}>Profil</Menu>
+                <Link to="/gejala">
+                    <Menu redirect={()=> changePage("gejala")}>Indication</Menu>
                 </Link>
-            </>
+                <Link to="/formgejala">
+                    <Menu redirect={()=> changePage("formgejala")}>Form Indication</Menu>
+                </Link>
+                {/* <Link>
+                    
+                </Link> */}
+                {/* <Link to="/profil">
+                    <Menu redirect={()=> changePage("profil")}>Profil</Menu>
+                </Link> */}
+            </div>
          );
     }
 }
