@@ -47,9 +47,9 @@ class FormGejala extends Component {
                 <div>
                     <Label>Indication </Label> <Input type="text" name="indication" value={indication} onChange={this.setValue} placeholder="seperti demam, batuk kering, sesak napas, dll.." />
                     <Label>Description </Label> <textarea type="text" name="description" value={description} onChange={this.setValue} placeholder="" />                    
-                    {/* <Link to="/">
+                    <Link to="/">
                         <button type="submit" value="submit" onClick={this.save} >Submit</button>
-                    </Link> */}
+                    </Link>
                 </div>
 
             </div>

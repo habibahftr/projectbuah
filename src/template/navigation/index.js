@@ -14,22 +14,16 @@ class Nav extends Component {
     render() { 
         const{changePage}= this.props
         return ( 
-            <div className="sidenav">
+            <div className="sidenav" style={{color:"white"}}>
                 <Link to="/home">
-                    <Menu redirect={()=> changePage("home")}>Home</Menu>
+                    <Menu >Home</Menu>
                 </Link>
                 <Link to="/gejala">
-                    <Menu redirect={()=> changePage("gejala")}>Indication</Menu>
+                    <Menu>Gejala</Menu>
                 </Link>
                 <Link to="/formgejala">
-                    <Menu redirect={()=> changePage("formgejala")}>Form Indication</Menu>
+                    <Menu>Form Gejala</Menu>
                 </Link>
-                {/* <Link>
-                    
-                </Link> */}
-                {/* <Link to="/profil">
-                    <Menu redirect={()=> changePage("profil")}>Profil</Menu>
-                </Link> */}
             </div>
          );
     }

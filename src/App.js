@@ -8,8 +8,7 @@ import Bodydef from "./template/bodyDef";
 import { connect } from "react-redux"
 import Gejala from "./page/gejala";
 import FormGejala from "./page/formg";
-import AppLogin from "./applogin";
-import AppContent from "./appcontent";
+import Home from './page/home';
 
 
 class App extends Component {
@@ -29,19 +28,24 @@ class App extends Component {
     if(!this.props.checkLogin){
       console.log("login", this.props.checkLogin);
       return(
-        <AppContent></AppContent>
+        <Router>
+        <Body></Body>
+        </Router>
              )
     }else{
       return (
-        <AppLogin></AppLogin>
-        
+        <Router>
+        <Home></Home>
+        </Router>        
       )
     }
   }
   render() { 
     return ( 
       <>
+      {/* <Router> */}
       {this.showPage()}
+      {/* </Router> */}
       </>
      );
   }

@@ -1,12 +1,5 @@
 let defaultState = {
-    users: [{
-        username:"",
-        password:"",
-        name:"",
-        nik:"",
-        indication:"",
-        provinsi:"",
-    }]
+    users: []
 }
 
 const userReducer = (state = defaultState, action) => {

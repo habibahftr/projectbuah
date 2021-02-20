@@ -1,31 +1,38 @@
 let defaultState = {
-    indications: [{
-        indication:"",
-        description:"",
-    }]
+    id:0,
+    indications: [
+        
+    ]
 }
 
 const gejalaReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "INDICATION_PAGE":
-            let newData = {
-                indication: action.payload.indication,
+            let dataBaru = {
+                id:state.id++,
+                indication : action.payload.indication,
                 description: action.payload.description,
             }
-            let data = {}
+            let gejala = {}
             if (state.indications.length === 0) {
-                data = state.indications.concat(newData)
-                data = state.indications.concat(newData)
+                gejala = state.indications.concat(dataBaru)
+                gejala = state.indications.concat(dataBaru)
             } else {
-                data = state.indications.concat(newData)
+                gejala = state.indications.concat(dataBaru)
             }
-            console.log(data)
+            console.log(gejala)
             return {
-                indications: data
+                indications: gejala
             }
+            
 
             case "CLEAR_DATA":
-                return defaultState
+                // let data = state.indications.splice(idx, 1)
+                return{
+                    // indications:data
+                }
+                
+                
             default:
                 return state
     }
